@@ -3,6 +3,7 @@ visualize_results_leaflet <- function(raster_classes1,raster_classes2,change_ras
   
   raster_classes1<-projectRaster(raster_classes1,crs=CRS("+init=epsg:3857"),method="ngb")
   raster_classes2<-projectRaster(raster_classes2,crs=CRS("+init=epsg:3857"),method="ngb")
+  change_raster<-projectRaster(change_raster,crs=CRS("+init=epsg:3857"),method="ngb")
   
   pal = colorFactor(classes_colours[1:nclasses], 
                     domain=(1:nclasses), na.color = "transparent")
